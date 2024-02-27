@@ -1,0 +1,36 @@
+[user]
+    email = jcelaya775@gmail.com
+    name = Jorge Celaya
+[core]
+    editor = nvim
+[alias]
+    ac = !git add -A && git commit -m
+    amn = !git add -A && git commit --amend --no-edit
+    amm = !git add -A && git commit --amend --no-edit -m
+    lg = log --graph --decorate
+    lgo = log --graph --oneline --decorate
+    lgh = log --graph --oneline --decorate -10
+    lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+    rl = reflog
+    last = log -1 HEAD
+    co = checkout
+    cob = checkout -b
+    del = branch -D
+    undo = reset HEAD~1 --mixed
+    cm = commit -m
+    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+    d = diff
+    ds = diff --staged
+    dno = diff --name-only
+    sh = show
+    st = stash
+    stl = stash list
+    sta = stash apply
+    stno = stash show --name-only
+    sno = show --name-only
+    s = status
+    se = !git rev-list --all | xargs git grep -F
+    do = !git diff origin/$(git symbolic-ref --short HEAD)
+    don = !git diff --name-only origin/$(git symbolic-ref --short HEAD)
+[url "git@github.com:"]
+	insteadOf = https://github.com/
