@@ -10,18 +10,6 @@ set ignorecase
 set smartcase
 
 " Remap
-inoremap <M-h> <Esc>h
-inoremap <M-j> <Esc>j
-inoremap <M-k> <Esc>k
-inoremap <M-l> <Esc>l
-vnoremap <M-h> <Esc>h
-vnoremap <M-j> <Esc>j
-vnoremap <M-k> <Esc>k
-vnoremap <M-l> <Esc>l
-"inoremap <C-h> <C-o>h
-"inoremap <C-j> <C-o>j
-"inoremap <C-k> <C-o>k
-"inoremap <C-l> <C-o>l
 inoremap <M-o> <C-o>o
 inoremap <M-S-o> <C-o>O
 inoremap <M-v> <C-o>v
@@ -75,7 +63,7 @@ nmap <C-9> <Action>(GoToTab9)
 nmap <C-0> <Action>(GoToTab0)
 
 " LSP
-nmap <leader>fr <Action>(FindUsages)
+nmap <leader>sr <Action>(FindUsages)
 nmap gi <Action>(GotoImplementation)
 nmap <leader>zf <Action>(ActivateAnalyzeDataflowfromToolWindow)
 nmap <leader>zt <Action>(ActivateAnalyzeDataflowToToolWindow)
