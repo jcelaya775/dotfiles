@@ -5,8 +5,8 @@
     editor = nvim
 [alias]
     ac = !git add -A && git commit -m
-    amn = !git add -A && git commit --amend --no-edit
-    amm = !git add -A && git commit --amend --no-edit -m
+    ; amn = !git add -A && git commit --amend --no-edit
+    ; amm = !git add -A && git commit --amend --no-edit -m
     lg = log --graph --decorate
     lgo = log --graph --oneline --decorate
     lgh = log --graph --oneline --decorate -10
