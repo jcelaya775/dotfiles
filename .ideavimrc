@@ -10,6 +10,18 @@ set ignorecase
 set smartcase
 
 " Remap
+inoremap <M-h> <Esc>h
+inoremap <M-j> <Esc>j
+inoremap <M-k> <Esc>k
+inoremap <M-l> <Esc>l
+vnoremap <M-h> <Esc>h
+vnoremap <M-j> <Esc>j
+vnoremap <M-k> <Esc>k
+vnoremap <M-l> <Esc>l
+"inoremap <C-h> <C-o>h
+"inoremap <C-j> <C-o>j
+"inoremap <C-k> <C-o>k
+"inoremap <C-l> <C-o>l
 inoremap <M-o> <C-o>o
 inoremap <M-S-o> <C-o>O
 inoremap <M-v> <C-o>v
@@ -36,8 +48,8 @@ nmap <leader>m <Action>(EditorPopupMenu)
 
 " Buffers
 nmap <leader>x <Action>(CloseContent)
-nmap <S-A-l> <Action>(NextTab)
-nmap <S-A-h> <Action>(PreviousTab)
+nmap <A-S-l> <Action>(NextTab)
+nmap <A-S-h> <Action>(PreviousTab)
 nmap <leader>1 <Action>(GoToTab1)
 nmap <leader>2 <Action>(GoToTab2)
 nmap <leader>3 <Action>(GoToTab3)
@@ -65,22 +77,25 @@ nmap <C-0> <Action>(GoToTab0)
 " LSP
 nmap <leader>sr <Action>(FindUsages)
 nmap gi <Action>(GotoImplementation)
-nmap <leader>zf <Action>(ActivateAnalyzeDataflowfromToolWindow)
-nmap <leader>zt <Action>(ActivateAnalyzeDataflowToToolWindow)
-nmap <A-n> <Action>()
-nmap <A-n> <Action>()
-" nmap <A-n> <Action>(NextOccurence)
-" nmap <A-p> <Action>(PreviousOccuence)
+"nmap <leader>zf <Action>(ActivateAnalyzeDataflowfromToolWindow)
+"nmap <leader>zt <Action>(ActivateAnalyzeDataflowToToolWindow)
+nmap <A-n> <Action>(NextIdentifierReloaded)
+nmap <A-p> <Action>(PreviousIdentifierReloaded)
+vmap <A-n> <Action>(NextIdentifierReloaded)
+vmap <A-p> <Action>(PreviousIdentifierReloaded)
 
 " VSC
-nmap <leader>gd <Action>(Diff.ShowDiff)
+nmap <leader>gd <Action>(Compare.LastVersion)
+nmap <leader>gp <Action>(VcsShowCurrentChangeMarker)
 nmap <leader>gb <Action>(Annotate)
+nmap [g <Action>(VcsShowPrevChangeMarker)
+nmap ]g <Action>(VcsShowNextChangeMarker)
 
 " Move selection
 " nnoremap <C-A-k> :m -2<CR>
 " nnoremap <C-A-j> :m +1<CR>
-inoremap <C-A-k> <Esc>:m -2<CR>gi
-inoremap <C-A-j> <Esc>:m +1<CR>gi
+" inoremap <C-A-k> <Esc>:m -2<CR>gi
+" inoremap <C-A-j> <Esc>:m +1<CR>gi
 
 " Move selected line / block of text in visual mode
 vnoremap <S-j> :m '>+1<CR>gv=gv
@@ -120,14 +135,14 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 
 " Tabs
-map <leader><Tab> <Action>(RecentFiles)
+nmap <leader><Tab> <Action>(RecentFiles)
 
 " Copilot
 imap <C-l> <Action>(copilot.applyInlaysNextWord)
 imap <C-A-l> <Action>(copilot.applyInlaysNextLine)
 
 Plug 'easymotion/vim-easymotion'
-nmap <A-[> <Action>(AceAction)
+nmap <A-;> <Action>(AceAction)
 
 Plug 'tpope/vim-surround'
 
@@ -144,6 +159,7 @@ nmap <leader>l <Action>(SetHarpoon3)
 nmap <leader>; <Action>(SetHarpoon4)
 nmap <leader>' <Action>(SetHarpoon5)
 nmap <A-e> <Action>(ShowHarpoon)
+nmap <leader>R <Action>(CloseAllToTheLeft)<Action>(CloseAllToTheRight)<Action>(CloseActiveTab)<Action>(GotoHarpoon1)<Action>(GotoHarpoon2)<Action>(GotoHarpoon3)<Action>(GotoHarpoon4)<Action>(GotoHarpoon5)
 
 Plug 'preservim/nerdtree'
 let g:NERDTreeMapActivateNode="l"
