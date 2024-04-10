@@ -33,3 +33,9 @@ will conflict with the ones in this repo
 ```
 stow .
 ```
+
+Finally, update the git submodules with
+
+```
+git submodule update
+```
