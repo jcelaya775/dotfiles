@@ -10,18 +10,6 @@ set ignorecase
 set smartcase
 
 " Remap
-inoremap <M-h> <Esc>h
-inoremap <M-j> <Esc>j
-inoremap <M-k> <Esc>k
-inoremap <M-l> <Esc>l
-vnoremap <M-h> <Esc>h
-vnoremap <M-j> <Esc>j
-vnoremap <M-k> <Esc>k
-vnoremap <M-l> <Esc>l
-"inoremap <C-h> <C-o>h
-"inoremap <C-j> <C-o>j
-"inoremap <C-k> <C-o>k
-"inoremap <C-l> <C-o>l
 inoremap <M-o> <C-o>o
 inoremap <M-S-o> <C-o>O
 inoremap <M-v> <C-o>v
@@ -48,8 +36,8 @@ nmap <leader>m <Action>(EditorPopupMenu)
 
 " Buffers
 nmap <leader>x <Action>(CloseContent)
-nmap <A-S-l> <Action>(NextTab)
-nmap <A-S-h> <Action>(PreviousTab)
+nmap <D-S-l> <Action>(NextTab)
+nmap <D-S-h> <Action>(PreviousTab)
 nmap <leader>1 <Action>(GoToTab1)
 nmap <leader>2 <Action>(GoToTab2)
 nmap <leader>3 <Action>(GoToTab3)
@@ -79,10 +67,10 @@ nmap <leader>sr <Action>(FindUsages)
 nmap gi <Action>(GotoImplementation)
 "nmap <leader>zf <Action>(ActivateAnalyzeDataflowfromToolWindow)
 "nmap <leader>zt <Action>(ActivateAnalyzeDataflowToToolWindow)
-nmap <A-n> <Action>(NextIdentifierReloaded)
-nmap <A-p> <Action>(PreviousIdentifierReloaded)
-vmap <A-n> <Action>(NextIdentifierReloaded)
-vmap <A-p> <Action>(PreviousIdentifierReloaded)
+nmap <D-n> <Action>(NextIdentifierReloaded)
+nmap <D-p> <Action>(PreviousIdentifierReloaded)
+vmap <D-n> <Action>(NextIdentifierReloaded)
+vmap <D-p> <Action>(PreviousIdentifierReloaded)
 
 " VSC
 nmap <leader>gd <Action>(Compare.LastVersion)
@@ -129,6 +117,8 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap <C-i> <C-i>zz
 nnoremap <C-o> <C-o>zz
+nnoremap n nzz
+nnoremap N Nzz
 nnoremap 'q 'qzz
 nnoremap 'w 'wzz
 nnoremap 'e 'ezz
@@ -156,10 +146,10 @@ nnoremap 'k 'kzz
 nnoremap 'l 'lzz
 nnoremap '; ';qzz
 nnoremap 'n 'nzz
+nnoremap 'n 'nzz
 nnoremap 'm 'mzz
 nnoremap ', ',qzz
 nnoremap '. '.qzz
-nnoremap '/ '/qzz
 
 " Window switching
 nnoremap <C-h> <C-w>h
@@ -168,7 +158,8 @@ nnoremap <C-j> <C-w>j
 " Tabs
 nmap <leader><Tab> <Action>(RecentFiles)
 
-" Copilot
+" GitHub Copilot
+imap <C-y> <Action>(copilot.applyInlays)
 imap <C-l> <Action>(copilot.applyInlaysNextWord)
 imap <C-A-l> <Action>(copilot.applyInlaysNextLine)
 
@@ -184,12 +175,18 @@ nmap <A-k> <Action>(GotoHarpoon2)
 nmap <A-l> <Action>(GotoHarpoon3)
 nmap <A-;> <Action>(GotoHarpoon4)
 nmap <A-u> <Action>(GotoHarpoon5)
+nmap <D-j> <Action>(GotoHarpoon1)
+nmap <D-k> <Action>(GotoHarpoon2)
+nmap <D-l> <Action>(GotoHarpoon3)
+nmap <D-;> <Action>(GotoHarpoon4)
+nmap <D-u> <Action>(GotoHarpoon5)
 nmap <leader>j <Action>(SetHarpoon1)
 nmap <leader>k <Action>(SetHarpoon2)
 nmap <leader>l <Action>(SetHarpoon3)
 nmap <leader>; <Action>(SetHarpoon4)
 nmap <leader>' <Action>(SetHarpoon5)
 nmap <A-e> <Action>(ShowHarpoon)
+nmap <D-e> <Action>(ShowHarpoon)
 nmap <leader>R <Action>(CloseAllToTheLeft)<Action>(CloseAllToTheRight)<Action>(CloseActiveTab)<Action>(GotoHarpoon1)<Action>(GotoHarpoon2)<Action>(GotoHarpoon3)<Action>(GotoHarpoon4)<Action>(GotoHarpoon5)
 
 Plug 'preservim/nerdtree'
