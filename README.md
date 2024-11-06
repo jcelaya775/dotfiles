@@ -1,10 +1,10 @@
 # My dotfiles
 
-This directory contains the dotfiles for my system
+This directory contains the dotfiles for my system ([youtube video](https://www.youtube.com/watch?v=y6XCebnB9gs)).
 
 ## Requirements
 
-Ensure you have the following installed on your system
+Ensure you have the following installed on your system:
 
 ### Git
 
@@ -27,7 +27,7 @@ git clone git@github.com:dreamsofautonomy/dotfiles.git
 cd dotfiles
 ```
 
-then use GNU stow to create symlinks. Make sure to rename existing config files/directories that
+then use GNU stow to create symlinks from `~/*` to `~/dotfiles/*.` Make sure to rename existing config files/directories that
 will conflict with the ones in this repo
 
 ```
